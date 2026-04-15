@@ -462,8 +462,12 @@ def admin_panel():
     return html
 
 def login(username):
+    conn = get_db_connection()
     password= "password123"  # In a real application, you would verify the password properly
     print(f"Logging in with username: {username} and password: {password}")
+    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    print(f"Executing query: {query}")
+    conn.execute(query)
 
 if __name__ == '__main__':
     app.run(debug=True)
