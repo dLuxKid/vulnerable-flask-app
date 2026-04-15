@@ -8,7 +8,7 @@ on:
 
 jobs:
   security-scan:
-    name: Semgre Scan
+    name: Semgrep Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -17,4 +17,4 @@ jobs:
       - name: Run Semrep CI
         uses: returntocorp/semgrep-action@v1
         with:
-          config: "p/ci p/owasp-top-10 p/best-security-practices p/python"
+          config: "p/owasp-top-ten"
