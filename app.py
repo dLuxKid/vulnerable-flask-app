@@ -462,7 +462,7 @@ def admin_panel():
     return html
 
 def login(username):
-    password = "password123"  # In a real application, you would verify the password properly
+    password= "password123"  # In a real application, you would verify the password properly
     print(f"Logging in with username: {username} and password: {password}")
 
 if __name__ == '__main__':
