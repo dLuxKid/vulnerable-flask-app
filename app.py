@@ -461,9 +461,9 @@ def admin_panel():
     html += "</ul><br><a href='/'>Back to Home</a></body></html>"
     return html
 
-# def login(username):
-#     password = "password123"  # In a real application, you would verify the password properly
-#     print(f"Logging in with username: {username} and password: {password}")
+def login(username):
+    password = "password123"  # In a real application, you would verify the password properly
+    print(f"Logging in with username: {username} and password: {password}")
 
 if __name__ == '__main__':
     app.run(debug=True)
