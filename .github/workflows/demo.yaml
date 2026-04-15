@@ -1,0 +1,22 @@
+name: Secret Demo
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+    security-check:
+        name: Scan for Hardcoded Credentials
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Hunt for Secrets
+              run: |
+                echo "Scanning for hardcoded credentials..."
+                if grep -qi "password=" app.py; then
+                  echo "CRITICAL FAILURE: Potential hardcoded credential found in app.py"
+                  exit 1
+                else
+                  echo "No hardcoded credentials found."
+                fi
